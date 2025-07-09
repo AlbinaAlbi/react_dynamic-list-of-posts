@@ -6,7 +6,7 @@ import { Comment, CommentData } from '../types/Comment';
 interface SidebarProps {
   openedPost: Post;
   hasCommentsError: boolean;
-  comments: Comment[] | null;
+  comments: Comment[] | [];
   hasCommentsLoader: boolean;
   handleDeleteComment: (postId: number) => void;
   hasError: boolean;

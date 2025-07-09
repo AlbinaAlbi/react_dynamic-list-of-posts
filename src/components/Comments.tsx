@@ -1,7 +1,7 @@
 import { Comment } from '../types/Comment';
 
 interface CommentsProps {
-  comments: Comment[];
+  comments: Comment[] | [];
   handleDeleteComment: (commentId: number) => void;
 }
 

@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import { Post } from '../types/Post';
 
 interface PostsListProps {
-  postsList: Post[] | null;
+  postsList: Post[] | [];
   openSidebar: boolean;
   openedPost: Post | null;
   handleOpenSidebar: (post: Post) => void;

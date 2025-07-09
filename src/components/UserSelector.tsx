@@ -4,7 +4,7 @@ import { User } from '../types/User';
 
 interface UserSelectorProps {
   handleSelectUser: (user: User) => void;
-  users: User[] | null;
+  users: User[] | [];
   selectedUser: User | null;
   activeDropdownMenu: boolean;
   setActiveDropdownMenu: (val: boolean) => void;

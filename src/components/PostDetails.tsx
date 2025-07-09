@@ -12,7 +12,7 @@ import { Comment, CommentData } from '../types/Comment';
 interface PostDetailsProps {
   openedPost: Post;
   hasCommentsError: boolean;
-  comments: Comment[] | null;
+  comments: Comment[] | [];
   hasCommentsLoader: boolean;
   handleDeleteComment: (commentId: number) => void;
   hasError: boolean;

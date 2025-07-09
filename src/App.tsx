@@ -23,7 +23,7 @@ import { Comment } from './types/Comment';
 
 export const App = () => {
   const [postsList, setPostsList] = useState<Post[]>([]);
-  const [users, setUsers] = useState<User[] | null>(null);
+  const [users, setUsers] = useState<User[]>([]);
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -35,7 +35,7 @@ export const App = () => {
   // bool?
   const [hasCommentsError, setHasCommentsError] = useState(false);
   // prefer empty array instead of nullable
-  const [comments, setComments] = useState<Comment[] | null>(null);
+  const [comments, setComments] = useState<Comment[]>([]);
   // bool, give it a correct name
   const [hasCommentsLoader, setHasCommentsLoader] = useState(false);
   const [hasAddCommentLoader, setHasAddCommentLoader] = useState(false);
@@ -70,13 +70,13 @@ export const App = () => {
     if (openSidebar && openedPost?.id === post.id) {
       setOpenSidebar(false);
       setOpenedPost(null);
-      setComments(null);
+      setComments([]);
     } else {
       setOpenSidebar(true);
       setOpenedPost(post);
       setHasCommentsLoader(true);
       setHasCommentsError(false);
-      setComments(null);
+      setComments([]);
     }
 
     getComments(post.id)
@@ -91,7 +91,7 @@ export const App = () => {
     deleteComment(commentId)
       .then(() => {
         setComments(prev =>
-          prev ? prev.filter(comment => comment.id !== commentId) : null,
+          prev ? prev.filter(comment => comment.id !== commentId) : [],
         );
       })
       .catch(() => setHasCommentsError(true));
