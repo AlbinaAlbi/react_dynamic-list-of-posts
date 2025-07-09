@@ -6,6 +6,7 @@ interface DropdownMenuProps {
   setActiveDropdownMenu: (isActive: boolean) => void;
   selectedUser: User | null;
   hasError: boolean;
+  activeDropdownMenu: boolean;
 }
 
 export const DropdownMenu: React.FC<DropdownMenuProps> = ({
@@ -14,7 +15,12 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = ({
   setActiveDropdownMenu,
   selectedUser,
   hasError,
+  activeDropdownMenu,
 }) => {
+  if (!activeDropdownMenu) {
+    return null;
+  }
+
   const handleActiveUser = (user: User) => {
     if (selectedUser === user && !hasError) {
       setActiveDropdownMenu(false);

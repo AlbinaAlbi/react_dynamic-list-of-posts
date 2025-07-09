@@ -48,15 +48,14 @@ export const UserSelector: React.FC<UserSelectorProps> = ({
         </button>
       </div>
 
-      {activeDropdownMenu && (
-        <DropdownMenu
-          users={users}
-          handleSelectUser={handleSelectUser}
-          setActiveDropdownMenu={setActiveDropdownMenu}
-          selectedUser={selectedUser}
-          hasError={hasError}
-        />
-      )}
+      <DropdownMenu
+        users={users}
+        handleSelectUser={handleSelectUser}
+        setActiveDropdownMenu={setActiveDropdownMenu}
+        selectedUser={selectedUser}
+        hasError={hasError}
+        activeDropdownMenu={activeDropdownMenu}
+      />
     </div>
   );
 };
